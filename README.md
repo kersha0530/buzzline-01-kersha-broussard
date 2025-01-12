@@ -61,7 +61,7 @@ Congratulations!
 
 In VS Code, open a terminal.
 Use the commands below to activate .venv, and run the generator as a module. 
-To learn more about why we run our Python file as a module, see [PYTHON_PKG_IMPORTS](docs/PYTHON_PKG_IMPORTS.md) 
+To learn more about why we run our Python file as a module, see [PYTHON-PKG-IMPORTS](docs/PYTHON-PKG-IMPORTS.md) 
 
 Windows PowerShell:
 
