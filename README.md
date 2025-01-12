@@ -34,6 +34,7 @@ For more information, See [PYTHON-VERSIONS.md](docs/PYTHON-VERSIONS.md).
 
 Once the tools are installed, copy/fork this project into your GitHub account
 and create your own version of this project to run and experiment with. 
+Name it **buzzline-01-yourname** where yourname is something unique to you.
 Follow the instructions in [FORK-THIS-REPO.md](docs/FORK-THIS-REPO.md).
 
 ## Task 3. Manage Local Project Virtual Environment
