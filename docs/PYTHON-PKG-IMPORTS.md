@@ -12,7 +12,7 @@ to work because Python knows to start looking from the root directory.
 
 ## Direct Execution Issue
 
-Running a script directly (e.g., `py producers\basic_generator_case.py`) 
+Running a script directly (e.g., `py producers\basic_producer_case.py`) 
 makes Python treat the producers folder as the starting point for resolving imports. 
 In this case, Python cannot find utils because it does not automatically 
 treat the parent directory as the root.
