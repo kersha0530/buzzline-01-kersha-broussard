@@ -30,10 +30,11 @@ You are encouraged to install both and practice mulitple versions.
 If space is an issue, we only need 3.11 in this course. 
 For more information, See [PYTHON-VERSIONS.md](docs/PYTHON-VERSIONS.md).
 
-## Task 2. Copy This Example Project
+## Task 2. Copy This Example Project & Change `case` to `yourname` (customized)
 
 Once the tools are installed, copy/fork this project into your GitHub account
 and create your own version of this project to run and experiment with. 
+Name it **buzzline-01-yourname** where yourname is something unique to you.
 Follow the instructions in [FORK-THIS-REPO.md](docs/FORK-THIS-REPO.md).
 
 ## Task 3. Manage Local Project Virtual Environment
@@ -60,19 +61,19 @@ Congratulations!
 
 In VS Code, open a terminal.
 Use the commands below to activate .venv, and run the generator as a module. 
-To learn more about why we run our Python file as a module, see [PYTHON_PKG_IMPORTS](docs/PYTHON_PKG_IMPORTS.md) 
+To learn more about why we run our Python file as a module, see [PYTHON-PKG-IMPORTS](docs/PYTHON-PKG-IMPORTS.md) 
 
 Windows PowerShell:
 
 ```shell
 .venv\Scripts\activate
-py -m producers.basic_generator_case
+py -m producers.basic_producer_case
 ```
 
 Mac/Linux:
 ```zsh
 source .venv/bin/activate
-python3 -m producers.basic_generator_case
+python3 -m producers.basic_producer_case
 ```
 
 ## Task 5. Monitor an Active Log File (Terminal 2)
