@@ -67,13 +67,13 @@ Windows PowerShell:
 
 ```shell
 .venv\Scripts\activate
-py -m producers.basic_generator_case
+py -m producers.basic_producer_case
 ```
 
 Mac/Linux:
 ```zsh
 source .venv/bin/activate
-python3 -m producers.basic_generator_case
+python3 -m producers.basic_producer_case
 ```
 
 ## Task 5. Monitor an Active Log File (Terminal 2)
