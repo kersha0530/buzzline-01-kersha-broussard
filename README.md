@@ -26,7 +26,7 @@ For detailed instructions, see:
 
 The most current version of Python is 3.13. 
 This course will use advanced tools (such as Kafka) that still require Python 3.11. 
-You are encouraged to install both and practice mulitple versions. 
+You are encouraged to install both and practice multiple versions. 
 If space is an issue, we only need 3.11 in this course. 
 For more information, See [PYTHON-VERSIONS.md](docs/PYTHON-VERSIONS.md).
 
@@ -44,7 +44,7 @@ For this, we create a .venv folder to hold our local project virtual environment
 We create this folder (just once), activate it, and install additional packages listed in requirements.txt. 
 
 Important: After creating, activating, and installing packages into .venv, 
-we must remember to activate .venv everytime we open a new terminal. 
+we must remember to activate .venv every time we open a new terminal. 
 
 Follow the instructions in [MANAGE-VENV.md](docs/MANAGE-VENV.md) to:
 1. Create your .venv
@@ -78,8 +78,8 @@ python3 -m producers.basic_producer_case
 
 ## Task 5. Monitor an Active Log File (Terminal 2)
 
-A common streaming task is monitoring a logfile as it is being written. 
-This project has a consumer that reads and processes our own logfile as log messages arrive. 
+A common streaming task is monitoring a log file as it is being written. 
+This project has a consumer that reads and processes our own log file as log messages arrive. 
 
 In VS Code, open a NEW terminal in your root project folder. 
 Use the commands below to activate .venv, and run the file as a module. 

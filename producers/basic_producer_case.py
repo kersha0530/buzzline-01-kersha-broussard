@@ -76,7 +76,7 @@ def generate_messages():
     Generators are memory-efficient because they produce items on the fly
     rather than creating a full list in memory.
 
-    Because this function uses a while True loop, it will run continously 
+    Because this function uses a while True loop, it will run continuously 
     until we close the window or hit CTRL c (CMD c on Mac/Linux).
     """
     while True:
@@ -99,7 +99,7 @@ def main() -> None:
     It doesn't return anything, so we say the return type is None.   
     The colon at the end of the function signature is required.
     All statements inside the function must be consistently indented. 
-    This is a multilie docstring - a special type of comment 
+    This is a multiline docstring - a special type of comment 
     that explains what the function does.
     """
 

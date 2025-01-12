@@ -1,5 +1,5 @@
 # requirements.txt - list all the packages the project needs
-# Ingnore hashes (#) - they are just used to create comments.
+# Ignore hashes (#) - they are just used to create comments.
 # Hashes will be ignored when we install packages using this file. 
 
 # ======================================================
