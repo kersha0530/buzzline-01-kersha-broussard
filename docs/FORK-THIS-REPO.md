@@ -8,14 +8,16 @@ This guide walks you through the steps to:
 - Clone it to your local machine.
 - Open and explore the project in VS Code for editing and learning.
 
-## Fork (Copy) This Repository
+## Copy This Repository
 
 1. Login to GitHub.
 2. Go to the existing example repository.
-3. Click "Fork" to copy it into your GitHub account.
+3. Click "Fork" or "Use This Template" to copy it into your GitHub account.
 
 IMPORTANT: Rename the repo to include yourname (or something unique). 
 Follow naming conventions - use all lowercase, no spaces, and use dashes between words. 
+"Forking" keeps you tied to the original repo. 
+"Use this template" removes the link.
 
 ## Clone YOUR Repository to Your Machine
 
