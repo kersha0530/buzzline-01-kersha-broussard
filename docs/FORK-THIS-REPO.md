@@ -39,6 +39,7 @@ mkdir Projects
 cd Projects
 git clone https://github.com/**youraccount**/**your-repo-name**
 cd **your-repo-name**
+code .
 ```
 
 ### Mac/Linux
