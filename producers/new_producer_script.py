@@ -6,7 +6,7 @@ import random
 if not os.path.exists("logs"):
     os.makedirs("logs")
 
-# Set up logger
+# Logger Setup for the producer
 logging.basicConfig(
     filename="logs/producer_log.log",  # Log file location
     level=logging.INFO,
