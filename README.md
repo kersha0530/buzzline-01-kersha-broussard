@@ -120,25 +120,29 @@ This custom producer generates log messages to simulate real-time data productio
 
 #### Usage
 To run the custom producer:
-```bash```
+```bash
 cd producers
 py new_producer_script.py
 
-### Custom Consumer: basic_consumer_kersha.py
+### Custom Consumer: `basic_consumer_kersha.py`
 This custom consumer reads log messages in real time, processes them, and raises alerts for specific patterns.
 
 #### Usage
 To run the custom consumer:
-```bash```
+```bash
 cd consumers
 py basic_consumer_kersha.py
 
-#### Logs Directory
-All logs are stored in the logs directory:
+```markdown
+## Logs Directory
+All logs are stored in the `logs` directory:
 
-#### consumer_log_kersha.log: Logs from the custom consumer.
-#### project_log.log: General logs for the project.
+- `consumer_log_kersha.log`: Logs from the custom consumer.
+- `project_log.log`: General logs for the project.
 
+
+### Project Directory Structure
+```plaintext
 ├── logs/
 │   ├── consumer_log_kersha.log
 │   ├── project_log.log
