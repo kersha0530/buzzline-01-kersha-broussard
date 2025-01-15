@@ -108,7 +108,8 @@ You are encouraged to fork, copy, explore, and modify the code as you like.
 See the [LICENSE](LICENSE.txt) file for more.
 
 
-# Buzzline Project
+# Buzzline Project 
+## buzzline-01-kersha-broussard
 
 This project implements a producer-consumer model for real-time logging and message processing.
 
@@ -119,24 +120,24 @@ This custom producer generates log messages to simulate real-time data productio
 
 #### Usage
 To run the custom producer:
-```bash
+```bash```
 cd producers
 py new_producer_script.py
 
-Custom Consumer: basic_consumer_kersha.py
+### Custom Consumer: basic_consumer_kersha.py
 This custom consumer reads log messages in real time, processes them, and raises alerts for specific patterns.
 
-Usage
+#### Usage
 To run the custom consumer:
-bash
+```bash```
 cd consumers
 py basic_consumer_kersha.py
 
-Logs Directory
+#### Logs Directory
 All logs are stored in the logs directory:
 
-consumer_log_kersha.log: Logs from the custom consumer.
-project_log.log: General logs for the project.
+#### consumer_log_kersha.log: Logs from the custom consumer.
+#### project_log.log: General logs for the project.
 
 ├── logs/
 │   ├── consumer_log_kersha.log
