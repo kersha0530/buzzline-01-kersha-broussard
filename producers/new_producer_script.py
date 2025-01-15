@@ -8,7 +8,8 @@ if not os.path.exists("logs"):
 
 # Logger Setup for the producer
 logging.basicConfig(
-    filename="logs/producer_log.log",  # Log file location
+    log_file_path = "../producers/logs/producer_log.log"
+,  # Log file location
     level=logging.INFO,
     format="%(asctime)s - %(levelname)s - %(message)s",
 )
@@ -32,6 +33,7 @@ def main():
     for msg in dynamic_message_generator():
         print(msg)
     logging.info("Finished generating messages.")
+
 
 if __name__ == "__main__":
     main()

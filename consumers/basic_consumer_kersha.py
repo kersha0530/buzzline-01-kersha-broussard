@@ -50,21 +50,36 @@ def process_message(log_file: str) -> None:
                 print(f"NOTE: Found a less exciting message. \n{message}")
                 logger.info(f"NOTE: Found a less exciting message. \n{message}")
 
+import os
+
 def main() -> None:
     """Main entry point."""
+
     logger.info("STARTING CONSUMER...")
 
-    # Define the producer's log file
-    log_file_path = "logs/producer_log.log"
-    logger.info(f"Reading file located at {log_file_path}")
+    # Define the log file path
+    log_file_path = "../producers/logs/producer_log.log"  # Correct relative path
+
+    # Debugging: Print the log file path and current working directory
+    print(f"Debug: Log file path being read is: {log_file_path}")
+    print(f"Debug: Current working directory is: {os.getcwd()}")
+
+    logger.info(f"Reading file located at {log_file_path}.")
 
     try:
         process_message(log_file_path)
+    except FileNotFoundError as e:
+        print(f"Error: {e}")
+        logger.error(f"FileNotFoundError: {e}")
     except KeyboardInterrupt:
         print("User stopped the process.")
         logger.info("Consumer stopped by user.")
 
     logger.info("CONSUMER ENDED.")
+
+
+if not os.path.exists(log_file_path):
+    raise FileNotFoundError(f"The log file does not exist at: {log_file_path}")
 
 if __name__ == "__main__":
     main()
