@@ -106,3 +106,47 @@ We will get a good amount of practice.
 This project is licensed under the MIT License as an example project. 
 You are encouraged to fork, copy, explore, and modify the code as you like. 
 See the [LICENSE](LICENSE.txt) file for more.
+
+
+# Buzzline Project
+
+This project implements a producer-consumer model for real-time logging and message processing.
+
+## Custom Scripts
+
+### Custom Producer: `new_producer_script.py`
+This custom producer generates log messages to simulate real-time data production.
+
+#### Usage
+To run the custom producer:
+```bash
+cd producers
+py new_producer_script.py
+
+Custom Consumer: basic_consumer_kersha.py
+This custom consumer reads log messages in real time, processes them, and raises alerts for specific patterns.
+
+Usage
+To run the custom consumer:
+bash
+cd consumers
+py basic_consumer_kersha.py
+
+Logs Directory
+All logs are stored in the logs directory:
+
+consumer_log_kersha.log: Logs from the custom consumer.
+project_log.log: General logs for the project.
+
+├── logs/
+│   ├── consumer_log_kersha.log
+│   ├── project_log.log
+│   └── .gitignore
+├── producers/
+│   ├── new_producer_script.py
+├── consumers/
+│   ├── basic_consumer_kersha.py
+├── utils/
+│   ├── utils_logger.py
+├── README.md
+
