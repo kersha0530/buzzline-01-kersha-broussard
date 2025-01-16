@@ -1,6 +1,6 @@
-import logging
 import os
-import random
+import time
+import logging
 
 # Ensure the logs directory exists
 if not os.path.exists("logs"):
@@ -14,19 +14,46 @@ logging.basicConfig(
     format="%(asctime)s - %(levelname)s - %(message)s",
 )
 
-ADJECTIVES = ["amazing", "funny", "boring", "exciting", "weird"]
-ACTIONS = ["found", "saw", "tried", "shared", "loved"]
-TOPICS = ["a movie", "a meme", "an app", "a trick", "a story"]
+def process_message(log_file_path: str):
+    """
+    Monitor the log file in real-time and process messages.
+    
+    Args:
+        log_file_path (str): Path to the log file to read.
+    """
+    if not os.path.exists(log_file_path):
+        print(f"Log file not found: {log_file_path}")
+        return
 
-def dynamic_message_generator():
-    """Generate dynamic custom messages."""
-    for _ in range(5):  # Generate 5 messages
-        adjective = random.choice(ADJECTIVES)
-        action = random.choice(ACTIONS)
-        topic = random.choice(TOPICS)
-        message = f"Someone {action} {adjective} {topic}!"
-        logging.info(f"Generated: {message}")
-        yield message
+    with open(log_file_path, "r") as file:
+        # Move to the end of the file to read new entries only
+        file.seek(0, os.SEEK_END)
+        print(f"Monitoring log file: {log_file_path}")
+
+        while True:
+            line = file.readline()
+            if not line:
+                # Wait for new lines to be written to the file
+                time.sleep(1)
+                continue
+
+            # Process the new log message
+            message = line.strip()
+            print(f"Consumed log message: {message}")
+
+            # Analyze the log message
+            if "amazing" in message:
+                logging.info(f"ALERT: Amazing message detected! {message}")
+                print(f"ALERT: Amazing message detected! {message}")
+
+            if "boring" in message:
+                logging.warning(f"Notice: Boring message found. {message}")
+                print(f"Notice: Boring message found. {message}")
+
+            # Example: Add analytics for specific patterns
+            if "tried" in message:
+                logging.info(f"Action Analytics: 'Tried' action noted in message. {message}")
+
 
 def main():
     logging.info("Starting the dynamic message generator.")
