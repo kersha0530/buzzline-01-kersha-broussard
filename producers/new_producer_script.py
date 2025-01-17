@@ -1,6 +1,18 @@
-import os
-import time
 import logging
+import os
+import random
+import time
+import sys
+
+print("Python executable:", sys.executable)
+print("Python version:", sys.version)
+
+
+# Add the parent directory to the system path
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
+
+
+from utils.utils_logger import logger, get_log_file_path
 
 # Ensure the logs directory exists
 if not os.path.exists("logs"):
@@ -8,60 +20,37 @@ if not os.path.exists("logs"):
 
 # Logger Setup for the producer
 logging.basicConfig(
-    log_file_path = "../producers/logs/producer_log.log"
-,  # Log file location
+    filename="logs/producer_log.log",  # Log file location
     level=logging.INFO,
     format="%(asctime)s - %(levelname)s - %(message)s",
 )
 
-def process_message(log_file_path: str):
-    """
-    Monitor the log file in real-time and process messages.
-    
-    Args:
-        log_file_path (str): Path to the log file to read.
-    """
-    if not os.path.exists(log_file_path):
-        print(f"Log file not found: {log_file_path}")
-        return
+# Lists of dynamic content
+ADJECTIVES = ["amazing", "funny", "boring", "exciting", "weird"]
+ACTIONS = ["found", "saw", "tried", "shared", "loved"]
+TOPICS = ["a movie", "a meme", "an app", "a trick", "a story"]
 
-    with open(log_file_path, "r") as file:
-        # Move to the end of the file to read new entries only
-        file.seek(0, os.SEEK_END)
-        print(f"Monitoring log file: {log_file_path}")
-
-        while True:
-            line = file.readline()
-            if not line:
-                # Wait for new lines to be written to the file
-                time.sleep(1)
-                continue
-
-            # Process the new log message
-            message = line.strip()
-            print(f"Consumed log message: {message}")
-
-            # Analyze the log message
-            if "amazing" in message:
-                logging.info(f"ALERT: Amazing message detected! {message}")
-                print(f"ALERT: Amazing message detected! {message}")
-
-            if "boring" in message:
-                logging.warning(f"Notice: Boring message found. {message}")
-                print(f"Notice: Boring message found. {message}")
-
-            # Example: Add analytics for specific patterns
-            if "tried" in message:
-                logging.info(f"Action Analytics: 'Tried' action noted in message. {message}")
-
+def dynamic_message_generator():
+    """Generate dynamic custom messages."""
+    while True:  # Run indefinitely
+        adjective = random.choice(ADJECTIVES)
+        action = random.choice(ACTIONS)
+        topic = random.choice(TOPICS)
+        message = f"Someone {action} {adjective} {topic}!"
+        logging.info(f"Generated: {message}")
+        print(message)  # Optional: Display the message in the console
+        time.sleep(3)  # Wait for 3 seconds before generating the next message
 
 def main():
     logging.info("Starting the dynamic message generator.")
-    for msg in dynamic_message_generator():
-        print(msg)
-    logging.info("Finished generating messages.")
-
+    try:
+        dynamic_message_generator()
+    except KeyboardInterrupt:
+        logging.info("Stopped the dynamic message generator.")
+        print("\nProducer stopped.")
 
 if __name__ == "__main__":
     main()
+
+
 
